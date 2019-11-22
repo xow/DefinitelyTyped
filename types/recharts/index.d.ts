@@ -511,6 +511,8 @@ export interface PolarAngleAxisTick {
     coordinate: number;
 }
 
+export type PolarAngleAxisDomain = number | 'auto' | 'dataMin' | 'dataMax';
+
 export interface PolarAngleAxisProps extends EventAttributes, Partial<PresentationAttributes> {
     type?: 'number' | 'category';
     angleAxisId?: string | number;
@@ -528,6 +530,7 @@ export interface PolarAngleAxisProps extends EventAttributes, Partial<Presentati
     stroke?: string;
     orientation?: 'inner' | 'outer';
     tickFormatter?: TickFormatterFunction;
+    domain?: Readonly<[PolarAngleAxisDomain, PolarAngleAxisDomain]>;
 }
 
 export class PolarAngleAxis extends React.Component<PolarAngleAxisProps> { }
